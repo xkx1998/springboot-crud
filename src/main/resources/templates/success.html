@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--名称空间，导入后有语法提示-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>成功</title>
+</head>
+<body>
+<p>成功</p>
+<!--th：任意html属性；来替换原生属性的值-->
+<div id="div01" class="add" th:id="${hello}" th:class="${hello}" th:text="${hello}"></div>
+<hr/>
+<!--将th:text里面的值设定为div里面的值-->
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div>
+<hr/>
+
+<!--th:each每次遍历都会生成当前这个标签，3个h4-->
+<h4 th:text="${user}" th:each="user:${users}"></h4>
+<hr/>
+
+<h4>
+    <span th:each="user:${users}">[[${user}]]</span>
+</h4>
+</body>
+</html>
